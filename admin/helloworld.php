@@ -17,13 +17,13 @@ if (!JFactory::getUser()->authorise('core.manage', 'com_helloworld'))
 }
 
 // Require helper file
-JLoader::register('HelloWorldHelper', dirname(__FILE__) . DS . 'helpers' . DS . 'helloworld.php');
+JLoader::register('HelloWorldHelper', __DIR__ . '/helpers/helloworld.php');
 
 // Import joomla controller library
 jimport('joomla.application.component.controller');
 
 // Get an instance of the controller prefixed by HelloWorld
-$controller = JController::getInstance('HelloWorld');
+$controller = JControllerLegacy::getInstance('HelloWorld');
 
 // Perform the Request task
 $controller->execute(JRequest::getCmd('task'));

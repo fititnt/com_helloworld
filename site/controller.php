@@ -19,6 +19,6 @@ jimport('joomla.application.component.controller');
  * @package  Joomla.Tutorials
  * @since    1.6
  */
-class HelloWorldController extends JController
+class HelloWorldController extends JControllerLegacy
 {
 }

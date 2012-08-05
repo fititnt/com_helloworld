@@ -19,7 +19,7 @@ jimport('joomla.application.component.controller');
  * @package  Joomla.Platform
  * @since    1.6
  */
-class HelloWorldController extends JController {
+class HelloWorldController extends JControllerLegacy {
 
 	/**
 	 * Typical view method for MVC based architecture

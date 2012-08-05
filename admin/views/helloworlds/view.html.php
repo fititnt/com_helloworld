@@ -18,7 +18,7 @@ jimport('joomla.application.component.view');
  * @package  Joomla.Tutorials
  * @since    1.6
  */
-class HelloWorldViewHelloWorlds extends JView {
+class HelloWorldViewHelloWorlds extends JViewLegacy {
 
 	/**
 	 * Overwriting JView display method

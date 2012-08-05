@@ -14,7 +14,7 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.application.component.controller');
 
 // Get an instance of the controller prefixed by HelloWorld
-$controller = JController::getInstance('HelloWorld');
+$controller = JControllerLegacy::getInstance('HelloWorld');
 
 // Perform the Request task
 $controller->execute(JRequest::getCmd('task'));
