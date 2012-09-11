@@ -7,7 +7,7 @@
  * @license     License GNU General Public License version 2 or later; see LICENSE.txt
  */
 // No direct access to this file
-defined('_JEXEC') or die('Restricted access');
+defined('_JEXEC') or die;
 
 // Include dependancy of the main model form
 jimport('joomla.application.component.modelform');

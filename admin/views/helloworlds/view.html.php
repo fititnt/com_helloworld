@@ -7,10 +7,10 @@
  * @license     License GNU General Public License version 2 or later; see LICENSE.txt
  */
 // No direct access to this file
-defined('_JEXEC') or die('Restricted access');
+defined('_JEXEC') or die;
 
-// Import Joomla view library
-jimport('joomla.application.component.view');
+// Importa Facade do JView focado em listagens
+require_once __DIR__ . '/../_viewlist.php';
 
 /**
  * HelloWorlds View
@@ -18,7 +18,25 @@ jimport('joomla.application.component.view');
  * @package  Joomla.Tutorials
  * @since    1.6
  */
-class HelloWorldViewHelloWorlds extends JViewLegacy {
+class HelloWorldViewHelloWorlds extends HelloWorldViewListFacade {
+  
+	/**
+	 * Contexto desta visão
+	 * 
+	 * @var  string 
+	 */
+	protected $context = 'HelloWorlds';
+
+	/**
+	 * Constructor.
+	 *
+	 * @param   array  $config  An optional associative array of configuration settings.
+	 * @since   11.1
+	 */
+	public function __construct($config = array())
+	{
+		parent::__construct($config);
+	}
 
 	/**
 	 * Overwriting JView display method
@@ -52,44 +70,4 @@ class HelloWorldViewHelloWorlds extends JViewLegacy {
 		// Set the document
 		$this->setDocument();
 	}
-
-	/**
-	 * Setting the toolbar
-	 * 
-	 * @return  void
-	 */
-	protected function addToolBar()
-	{
-		$canDo = HelloWorldHelper::getActions();
-		JToolBarHelper::title(JText::_('COM_HELLOWORLD_MANAGER_HELLOWORLDS'), 'helloworld');
-		if ($canDo->get('core.create'))
-		{
-			JToolBarHelper::addNew('helloworld.add', 'JTOOLBAR_NEW');
-		}
-		if ($canDo->get('core.edit'))
-		{
-			JToolBarHelper::editList('helloworld.edit', 'JTOOLBAR_EDIT');
-		}
-		if ($canDo->get('core.delete'))
-		{
-			JToolBarHelper::deleteList('', 'helloworlds.delete', 'JTOOLBAR_DELETE');
-		}
-		if ($canDo->get('core.admin'))
-		{
-			JToolBarHelper::divider();
-			JToolBarHelper::preferences('com_helloworld');
-		}
-	}
-
-	/**
-	 * Method to set up the document properties
-	 *
-	 * @return void
-	 */
-	protected function setDocument()
-	{
-		$document = JFactory::getDocument();
-		$document->setTitle(JText::_('COM_HELLOWORLD_ADMINISTRATION'));
-	}
-
 }

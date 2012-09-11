@@ -6,7 +6,7 @@
  * @license     License GNU General Public License version 2 or later; see LICENSE.txt
  */
 // No direct access to this file
-defined('_JEXEC') or die('Restricted Access');
+defined('_JEXEC') or die;
 ?>
 <tr>
 	<th width="5">

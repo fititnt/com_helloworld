@@ -8,10 +8,10 @@
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 // No direct access to this file
-defined('_JEXEC') or die('Restricted access');
+defined('_JEXEC') or die;
 
-// Import Joomla controllerform library
-jimport('joomla.application.component.controllerform');
+// Importa Facade do JControllerForm
+require_once '_controllerform.php';
 
 /**
  * HelloWorld Controller
@@ -19,6 +19,6 @@ jimport('joomla.application.component.controllerform');
  * @package  Joomla.Platform
  * @since    1.6
  */
-class HelloWorldControllerHelloWorld extends JControllerForm {
+class HelloWorldControllerHelloWorld extends HelloWorldJControllerFormFacade {
 
 }

@@ -8,10 +8,10 @@
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 // No direct access to this file
-defined('_JEXEC') or die('Restricted access');
+defined('_JEXEC') or die;
 
-// Import the Joomla modellist library
-jimport('joomla.application.component.modellist');
+// Importa Facade do JModelList
+require_once '_modellist.php';
 
 /**
  * HelloWorldList Model
@@ -19,7 +19,7 @@ jimport('joomla.application.component.modellist');
  * @package  Joomla.Platform
  * @since    1.6
  */
-class HelloWorldModelHelloWorlds extends JModelList {
+class HelloWorldModelHelloWorlds extends HelloWorldModelListFacade {
 
 	/**
 	 * Method to build an SQL query to load the list data.

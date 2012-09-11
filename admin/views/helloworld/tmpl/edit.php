@@ -6,7 +6,7 @@
  * @license     License GNU General Public License version 2 or later; see LICENSE.txt
  */
 // No direct access
-defined('_JEXEC') or die('Restricted access');
+defined('_JEXEC') or die;
 JHtml::_('behavior.tooltip');
 JHtml::_('behavior.formvalidation');
 $params = $this->form->getFieldsets('params');

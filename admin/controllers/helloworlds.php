@@ -8,10 +8,10 @@
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 // No direct access to this file
-defined('_JEXEC') or die('Restricted access');
+defined('_JEXEC') or die;
 
-// Import Joomla controlleradmin library
-jimport('joomla.application.component.controlleradmin');
+// Importa Facade do JControllerAdmin
+require_once '_controlleradmin.php';
 
 /**
  * HelloWorlds Controller
@@ -19,22 +19,14 @@ jimport('joomla.application.component.controlleradmin');
  * @package  Joomla.Platform
  * @since    1.6
  */
-class HelloWorldControllerHelloWorlds extends JControllerAdmin {
+class HelloWorldControllerHelloWorlds extends HelloWorldJControllerAdminFacade {
 
 	/**
-	 * Proxy for getModel
+	 * Contexto atual
 	 *
-	 * @param   string  $name    The model name. Optional.
-	 * @param   string  $prefix  The class prefix. Optional.
-	 *
-	 * @return  object  The model.
-	 *
-	 * @since   11.1
+	 * @var    string
+	 * @since  2.5
 	 */
-	public function getModel($name = 'HelloWorld', $prefix = 'HelloWorldModel')
-	{
-		$model = parent::getModel($name, $prefix, array('ignore_request' => true));
-		return $model;
-	}
+	protected $context = 'HelloWorlds';
 
 }

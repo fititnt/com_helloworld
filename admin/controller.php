@@ -8,7 +8,7 @@
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 // No direct access to this file
-defined('_JEXEC') or die('Restricted access');
+defined('_JEXEC') or die;
 
 // Import Joomla controller library
 jimport('joomla.application.component.controller');
@@ -33,7 +33,7 @@ class HelloWorldController extends JControllerLegacy {
 	 *
 	 * @since   11.1
 	 */
-	public function display($cachable = false)
+	public function display($cachable = false, $urlparams = false)
 	{
 		// Set default view if not set
 		JRequest::setVar('view', JRequest::getCmd('view', 'HelloWorlds'));
