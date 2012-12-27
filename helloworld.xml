@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="component" version="2.5.0" method="upgrade">
+<extension
+    type="component"
+    version="3.0"
+    method="upgrade">
  
 	<name>COM_HELLOWORLD</name>
-	<!-- The following elements are optional and free of formatting conttraints -->
-	<creationDate>November 2009</creationDate>
+	<creationDate>Jan 2013</creationDate>
 	<author>John Doe</author>
 	<authorEmail>john.doe@example.org</authorEmail>
 	<authorUrl>http://www.example.org</authorUrl>
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
-	<!--  The version string is recorded in the components table -->
-	<version>0.0.19</version>
+	<version>1.0RC</version>
 	<!-- The description is optional and defaults to the name -->
 	<description>COM_HELLOWORLD_DESCRIPTION</description>
  

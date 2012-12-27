@@ -105,7 +105,7 @@ class HelloWorldJTableFacade extends JTable {
 	protected function _getAssetName()
 	{
 		$k = $this->_tbl_key;
-		return 'com_px.message.' . (int) $this->$k;
+		return 'com_helloworld.message.' . (int) $this->$k;
 	}
 
 	/**

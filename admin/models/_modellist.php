@@ -90,6 +90,7 @@ class HelloWorldModelListFacade extends JModelList {
 			$this->search_fields = $config['search_fields'];
 		}
 
+    /*
 		if (PXDEBUG)
 		{
 			// Necessário definir caso debug esteja logado, pois __construct() ainda não foi chamado
@@ -108,6 +109,7 @@ class HelloWorldModelListFacade extends JModelList {
 				$this->log_console = new PxLogConsole($this->component_params->get('debug_console', null));
 			}
 		}
+     */
 	}
 
 	/**
@@ -134,7 +136,7 @@ class HelloWorldModelListFacade extends JModelList {
 			);
 		}
 
-		PXDEBUG && $this->log_console ? $this->log_console->log($this->state, $this->input) : '';
+		// PXDEBUG && $this->log_console ? $this->log_console->log($this->state, $this->input) : '';
 	}
 
 	/**

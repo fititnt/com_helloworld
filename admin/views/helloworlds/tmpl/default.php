@@ -12,14 +12,45 @@ defined('_JEXEC') or die;
 JHtml::_('behavior.tooltip');
 ?>
 <form action="<?php echo JRoute::_('index.php?option=com_helloworld'); ?>" method="post" name="adminForm" id="adminForm">
-	<table class="adminlist">
-		<thead><?php echo $this->loadTemplate('head'); ?></thead>
-		<tfoot><?php echo $this->loadTemplate('foot'); ?></tfoot>
-		<tbody><?php echo $this->loadTemplate('body'); ?></tbody>
-	</table>
-	<div>
-		<input type="hidden" name="task" value="" />
-		<input type="hidden" name="boxchecked" value="0" />
-		<?php echo JHtml::_('form.token'); ?>
-	</div>
+  <table class="adminlist">
+    <thead>
+      <tr>
+        <th width="5">
+          <?php echo JText::_('COM_HELLOWORLD_HELLOWORLD_HEADING_ID'); ?>
+        </th>
+        <th width="20">
+          <input type="checkbox" name="toggle" value="" onclick="checkAll(<?php echo count($this->items); ?>);" />
+        </th>			
+        <th>
+          <?php echo JText::_('COM_HELLOWORLD_HELLOWORLD_HEADING_GREETING'); ?>
+        </th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <td colspan="3"><?php echo $this->pagination->getListFooter(); ?></td>
+      </tr>
+
+    </tfoot>
+    <tbody>
+      <?php foreach ($this->items as $i => $item): ?>
+        <tr class="row<?php echo $i % 2; ?>">
+          <td>
+            <?php echo $item->id; ?>
+          </td>
+          <td>
+            <?php echo JHtml::_('grid.id', $i, $item->id); ?>
+          </td>
+          <td>
+            <?php echo $item->greeting; ?>
+          </td>
+        </tr>
+      <?php endforeach; ?>
+    </tbody>
+  </table>
+  <div>
+    <input type="hidden" name="task" value="" />
+    <input type="hidden" name="boxchecked" value="0" />
+    <?php echo JHtml::_('form.token'); ?>
+  </div>
 </form>

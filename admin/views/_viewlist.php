@@ -71,7 +71,7 @@ class HelloWorldViewListFacade extends JViewLegacy {
 	protected function addToolBar()
 	{
 		$canDo = HelloWorldHelper::getActions();
-		JToolBarHelper::title(JText::_('COM_PX_MANAGER_' . strtoupper($this->context)), 'generic.png');
+		JToolBarHelper::title(JText::_('COM_HELLOWORLD_MANAGER_' . strtoupper($this->context)), 'generic.png');
 		if ($canDo->get('core.create'))
 		{
 			JToolBarHelper::addNew($this->context_singular . '.add', 'JTOOLBAR_NEW');
@@ -87,7 +87,7 @@ class HelloWorldViewListFacade extends JViewLegacy {
 		if ($canDo->get('core.admin'))
 		{
 			JToolBarHelper::divider();
-			JToolBarHelper::preferences('com_px');
+			JToolBarHelper::preferences('com_helloworld');
 		}
 	}
 
@@ -99,7 +99,7 @@ class HelloWorldViewListFacade extends JViewLegacy {
 	protected function setDocument()
 	{
 		$document = JFactory::getDocument();
-		$document->setTitle(JText::_('COM_PX_ADMINISTRATION_' . strtoupper($this->context)));
+		$document->setTitle(JText::_('COM_HELLOWORLD_ADMINISTRATION_' . strtoupper($this->context)));
 	}
 
 }

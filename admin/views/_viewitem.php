@@ -112,7 +112,7 @@ class HelloWorldViewItemFacade extends JViewLegacy {
 		$isNew = $this->item->id == 0;
 		$canDo = HelloWorldHelper::getActions($this->item->id);
 		JToolBarHelper::title(
-				$isNew ? JText::_('COM_PX_MANAGER_' . strtoupper($this->context) . '_NEW') : JText::_('COM_PX_MANAGER_'
+				$isNew ? JText::_('COM_HELLOWORLD_MANAGER_' . strtoupper($this->context) . '_NEW') : JText::_('COM_HELLOWORLD_MANAGER_'
 								. strtoupper($this->context) . '_EDIT'), 'generic.png'
 				);
 
@@ -160,8 +160,8 @@ class HelloWorldViewItemFacade extends JViewLegacy {
 		$isNew = $this->item->id == 0;
 		$document = JFactory::getDocument();
 		$document->setTitle(
-				$isNew ? JText::_('COM_PX_MANAGER_' . strtoupper($this->context) . '_NEW') :
-						JText::_('COM_PX_MANAGER_' . strtoupper($this->context) . '_EDIT')
+				$isNew ? JText::_('COM_HELLOWORLD_MANAGER_' . strtoupper($this->context) . '_NEW') :
+						JText::_('COM_HELLOWORLD_MANAGER_' . strtoupper($this->context) . '_EDIT')
 				);
 	}
 
