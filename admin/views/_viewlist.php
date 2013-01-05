@@ -1,11 +1,11 @@
 <?php
 
 /**
- * @package    PortfolioX.Componente
- * @author     Emerson Rocha Luiz <emerson@webdesign.eng.br>
- * @copyright  Copyright (C) 2012 Webdesign Assessoria em Tecnologia da Informacao. All rights reserved.
- * @license    GNU General Public License version 3. See license.txt
+ * @package    Alligo.Joomla.Component.HelloWorld
  *
+ * @author     Emerson Rocha Luiz <emerson@webdesign.eng.br>
+ * @copyright  Copyright (C) 2005 - 2013 Alligo LTDA.
+ * @license    GNU General Public License version 2; see LICENSE
  */
 defined('_JEXEC') or die;
 
@@ -20,86 +20,86 @@ jimport('joomla.application.component.view');
  */
 class HelloWorldViewListFacade extends JViewLegacy {
 
-	/**
-	 * Contexto atual desta visão
-	 * 
-	 * @var  string 
-	 */
-	protected $context = null;
+		/**
+		 * Contexto atual desta visão
+		 * 
+		 * @var  string 
+		 */
+		protected $context = null;
 
-	/**
-	 * Contexto desta visão do tipo singular
-	 * 
-	 * @var  string 
-	 */
-	protected $context_singular = null;
+		/**
+		 * Contexto desta visão do tipo singular
+		 * 
+		 * @var  string 
+		 */
+		protected $context_singular = null;
 
-	/**
-	 * Contexto desta visão do tipo plural
-	 * 
-	 * @var  string 
-	 */
-	protected $context_plural = null;
+		/**
+		 * Contexto desta visão do tipo plural
+		 * 
+		 * @var  string 
+		 */
+		protected $context_plural = null;
 
-	/**
-	 * Constructor.
-	 *
-	 * @param   array  $config  An optional associative array of configuration settings.
-	 * 
-	 * @since   11.1
-	 */
-	public function __construct($config = array())
-	{
-		// Parte do principio que se trata de apenas remover a ultima letra para tornar singular. Existem excessões. Se for o caso, sobrescreva-o
-		if (!$this->context_plural)
+		/**
+		 * Constructor.
+		 *
+		 * @param   array  $config  An optional associative array of configuration settings.
+		 * 
+		 * @since   11.1
+		 */
+		public function __construct($config = array())
 		{
-			$this->context_plural = $this->context;
-		}
-		if (!$this->context_singular)
-		{
-			$this->context_singular = substr($this->context, 0, -1);
+				// Parte do principio que se trata de apenas remover a ultima letra para tornar singular. Existem excessões. Se for o caso, sobrescreva-o
+				if (!$this->context_plural)
+				{
+						$this->context_plural = $this->context;
+				}
+				if (!$this->context_singular)
+				{
+						$this->context_singular = substr($this->context, 0, -1);
+				}
+
+				parent::__construct($config);
 		}
 
-		parent::__construct($config);
-	}
+		/**
+		 * Setting the toolbar
+		 * 
+		 * @return  void
+		 */
+		protected function addToolBar()
+		{
+				$canDo = HelloWorldHelper::getActions();
+				JToolBarHelper::title(JText::_('COM_HELLOWORLD_MANAGER_' . strtoupper($this->context)), 'generic.png');
+				if ($canDo->get('core.create'))
+				{
+						JToolBarHelper::addNew($this->context_singular . '.add', 'JTOOLBAR_NEW');
+				}
+				if ($canDo->get('core.edit'))
+				{
+						JToolBarHelper::editList($this->context_singular . '.edit', 'JTOOLBAR_EDIT');
+				}
+				if ($canDo->get('core.delete'))
+				{
+						JToolBarHelper::deleteList('', $this->context_plural . '.delete', 'JTOOLBAR_DELETE');
+				}
+				if ($canDo->get('core.admin'))
+				{
+						JToolBarHelper::divider();
+						JToolBarHelper::preferences('com_helloworld');
+				}
+		}
 
-	/**
-	 * Setting the toolbar
-	 * 
-	 * @return  void
-	 */
-	protected function addToolBar()
-	{
-		$canDo = HelloWorldHelper::getActions();
-		JToolBarHelper::title(JText::_('COM_HELLOWORLD_MANAGER_' . strtoupper($this->context)), 'generic.png');
-		if ($canDo->get('core.create'))
+		/**
+		 * Method to set up the document properties
+		 *
+		 * @return void
+		 */
+		protected function setDocument()
 		{
-			JToolBarHelper::addNew($this->context_singular . '.add', 'JTOOLBAR_NEW');
+				$document = JFactory::getDocument();
+				$document->setTitle(JText::_('COM_HELLOWORLD_ADMINISTRATION_' . strtoupper($this->context)));
 		}
-		if ($canDo->get('core.edit'))
-		{
-			JToolBarHelper::editList($this->context_singular . '.edit', 'JTOOLBAR_EDIT');
-		}
-		if ($canDo->get('core.delete'))
-		{
-			JToolBarHelper::deleteList('', $this->context_plural . '.delete', 'JTOOLBAR_DELETE');
-		}
-		if ($canDo->get('core.admin'))
-		{
-			JToolBarHelper::divider();
-			JToolBarHelper::preferences('com_helloworld');
-		}
-	}
-
-	/**
-	 * Method to set up the document properties
-	 *
-	 * @return void
-	 */
-	protected function setDocument()
-	{
-		$document = JFactory::getDocument();
-		$document->setTitle(JText::_('COM_HELLOWORLD_ADMINISTRATION_' . strtoupper($this->context)));
-	}
 
 }

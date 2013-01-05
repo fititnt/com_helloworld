@@ -1,11 +1,11 @@
 <?php
 
 /**
- * @package    HelloWorld.Componente
- * @author     Emerson Rocha Luiz <emerson@webdesign.eng.br>
- * @copyright  Copyright (C) 2012 Webdesign Assessoria em Tecnologia da Informacao. All rights reserved.
- * @license    GNU General Public License version 3. See license.txt
+ * @package    Alligo.Joomla.Component.HelloWorld
  *
+ * @author     Emerson Rocha Luiz <emerson@webdesign.eng.br>
+ * @copyright  Copyright (C) 2005 - 2013 Alligo LTDA.
+ * @license    GNU General Public License version 2; see LICENSE
  */
 defined('_JEXEC') or die;
 
@@ -21,32 +21,29 @@ jimport('joomla.application.component.controlleradmin');
  */
 class HelloWorldJControllerAdminFacade extends JControllerAdmin {
 
-	/**
-	 * Contexto atual
-	 *
-	 * @var    string
-	 * @since  2.5
-	 */
-	protected $context = null;
+		/**
+		 * Contexto atual
+		 *
+		 * @var    string
+		 * @since  2.5
+		 */
+		protected $context = null;
 
-	/**
-	 * Proxy for getModel
-	 *
-	 * @param   string  $name    The model name. Optional.
-	 * @param   string  $prefix  The class prefix. Optional.
-	 *
-	 * @return  object  The model.
-	 *
-	 * @since   11.1
-	 */
-	public function getModel()
-	{
-		// Parte do presuposto que irá retornar um contexto plural, porém é necessário saber singular
-		$name = ucfirst(substr($this->context, 0, -1));
+		/**
+		 * Proxy for getModel
+		 *
+		 * @return  object  The model.
+		 *
+		 * @since   11.1
+		 */
+		public function getModel()
+		{
+				// Parte do presuposto que irá retornar um contexto plural, porém é necessário saber singular
+				$name = ucfirst(substr($this->context, 0, -1));
 
-		$model = parent::getModel($name, 'HelloWorldModel', array('ignore_request' => true));
-		//var_dump($model);die;
-		return $model;
-	}
+				$model = parent::getModel($name, 'HelloWorldModel', array('ignore_request' => true));
+
+				return $model;
+		}
 
 }

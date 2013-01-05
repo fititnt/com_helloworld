@@ -1,11 +1,11 @@
 <?php
 
 /**
- * @package    HelloWorld.Componente
- * @author     Emerson Rocha Luiz <emerson@webdesign.eng.br>
- * @copyright  Copyright (C) 2012 Webdesign Assessoria em Tecnologia da Informacao. All rights reserved.
- * @license    GNU General Public License version 3. See license.txt
+ * @package    Alligo.Joomla.Component.HelloWorld
  *
+ * @author     Emerson Rocha Luiz <emerson@webdesign.eng.br>
+ * @copyright  Copyright (C) 2005 - 2013 Alligo LTDA.
+ * @license    GNU General Public License version 2; see LICENSE
  */
 defined('_JEXEC') or die;
 

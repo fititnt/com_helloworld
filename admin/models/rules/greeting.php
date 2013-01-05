@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @package     Joomla.Tutorials
- * @subpackage  Components
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license     License GNU General Public License version 2 or later; see LICENSE.txt
+ * @package    Alligo.Joomla.Component.HelloWorld
+ *
+ * @author     Emerson Rocha Luiz <emerson@webdesign.eng.br>
+ * @copyright  Copyright (C) 2005 - 2013 Alligo LTDA.
+ * @license    GNU General Public License version 2; see LICENSE
  */
-// No direct access to this file
 defined('_JEXEC') or die;
 
 // Import Joomla formrule library
@@ -15,18 +15,18 @@ jimport('joomla.form.formrule');
 /**
  * Form Rule class for the Joomla Framework.
  * 
- * @package  Joomla.Tutorials
+ * @package  Alligo.Joomla.Component.HelloWorld
  * @since    1.6
  */
 class JFormRuleGreeting extends JFormRule {
 
-	/**
-	 * The regular expression.
-	 *
-	 * @access	protected
-	 * @var		string
-	 * @since	1.6
-	 */
-	protected $regex = '^[^0-9]+$';
+		/**
+		 * The regular expression.
+		 *
+		 * @access	protected
+		 * @var		string
+		 * @since	1.6
+		 */
+		protected $regex = '^[^0-9]+$';
 
 }

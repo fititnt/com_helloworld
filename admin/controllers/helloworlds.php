@@ -1,13 +1,12 @@
 <?php
 
 /**
- * @package     Joomla.Platform
- * @subpackage  Application
+ * @package    Alligo.Joomla.Component.HelloWorld
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE
+ * @author     Emerson Rocha Luiz <emerson@webdesign.eng.br>
+ * @copyright  Copyright (C) 2005 - 2013 Alligo LTDA.
+ * @license    GNU General Public License version 2; see LICENSE
  */
-// No direct access to this file
 defined('_JEXEC') or die;
 
 // Importa Facade do JControllerAdmin
@@ -21,12 +20,12 @@ require_once '_controlleradmin.php';
  */
 class HelloWorldControllerHelloWorlds extends HelloWorldJControllerAdminFacade {
 
-	/**
-	 * Contexto atual
-	 *
-	 * @var    string
-	 * @since  2.5
-	 */
-	protected $context = 'HelloWorlds';
+		/**
+		 * Contexto atual
+		 *
+		 * @var    string
+		 * @since  2.5
+		 */
+		protected $context = 'HelloWorlds';
 
 }

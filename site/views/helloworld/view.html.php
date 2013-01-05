@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package     Joomla.Tutorials
+ * @package     Alligo.Joomla.Component.HelloWorld
  * @subpackage  Components
  * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
  * @license     License GNU General Public License version 2 or later; see LICENSE.txt
@@ -15,7 +15,7 @@ jimport('joomla.application.component.view');
 /**
  * HTML View class for the HelloWorld Component
  * 
- * @package  Joomla.Tutorials
+ * @package  Alligo.Joomla.Component.HelloWorld
  * @since    1.6
  */
 class HelloWorldViewHelloWorld extends JViewLegacy {
