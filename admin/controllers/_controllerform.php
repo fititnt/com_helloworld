@@ -20,5 +20,18 @@ jimport('joomla.application.component.controllerform');
  * @since    2.5
  */
 class HelloWorldJControllerFormFacade extends JControllerForm {
-  
+
+		/**
+		 * Constructor.
+		 *
+		 * @param   array  $config  An optional associative array of configuration settings.
+		 *
+		 * @see     JController
+		 * @since   11.1
+		 */
+		public function __construct($config = array())
+		{
+				parent::__construct($config);
+		}
+
 }

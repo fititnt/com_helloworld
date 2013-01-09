@@ -16,7 +16,7 @@ $params = $this->form->getFieldsets('params');
 
 		<div class="width-60 fltlft">
 				<fieldset class="adminform">
-						<legend><?php echo JText::_('COM_HELLOWORLD_HELLOWORLD_DETAILS'); ?></legend>
+						<legend><?php echo JText::_('ALG_SYS_DETAILS'); ?></legend>
 						<ul class="adminformlist">
 								<?php foreach ($this->form->getFieldset('details') as $field): ?>
 										<li><?php

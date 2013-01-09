@@ -30,6 +30,19 @@ class HelloWorldJControllerAdminFacade extends JControllerAdmin {
 		protected $context = null;
 
 		/**
+		 * Constructor.
+		 *
+		 * @param   array  $config  An optional associative array of configuration settings.
+		 *
+		 * @see     JController
+		 * @since   11.1
+		 */
+		public function __construct($config = array())
+		{
+				parent::__construct($config);
+		}
+
+		/**
 		 * Proxy for getModel
 		 *
 		 * @return  object  The model.
