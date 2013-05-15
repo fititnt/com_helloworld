@@ -15,7 +15,7 @@ defined('_JEXEC') or die;
  * @package  Alligo.Joomla.Component.HelloWorld
  * @since    1.6
  */
-class com_helloWorldInstallerScript {
+class com_HelloWorldInstallerScript {
 
 		/**
 		 * Method to install the component

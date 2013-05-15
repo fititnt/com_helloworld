@@ -43,13 +43,17 @@ class HelloWorldJControllerAdminFacade extends JControllerAdmin {
 		}
 
 		/**
-		 * Proxy for getModel
+		 * Method to get a model object, loading it if required.
+		 *
+		 * @param   string  $name    The model name. Optional.
+		 * @param   string  $prefix  The class prefix. Optional.
+		 * @param   array   $config  Configuration array for model. Optional.
 		 *
 		 * @return  object  The model.
 		 *
-		 * @since   11.1
+		 * @since   12.2
 		 */
-		public function getModel()
+		public function getModel($name = '', $prefix = '', $config = array())
 		{
 				// Parte do presuposto que irá retornar um contexto plural, porém é necessário saber singular
 				$name = ucfirst(substr($this->context, 0, -1));

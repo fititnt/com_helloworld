@@ -25,6 +25,7 @@ $params = $this->form->getFieldsets('params');
 										?></li>
 								<?php endforeach; ?>
 						</ul>
+				</fieldset>
 		</div>
 
 		<div class="width-40 fltrt">
