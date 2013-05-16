@@ -14,7 +14,7 @@ jimport('joomla.application.component.view');
 
 /**
  * PXs View
- * 
+ *
  * @package  PortfolioX.Componente
  * @since    2.5
  */
@@ -22,22 +22,22 @@ class HelloWorldViewListFacade extends JViewLegacy {
 
 		/**
 		 * Contexto atual desta visão
-		 * 
-		 * @var  string 
+		 *
+		 * @var  string
 		 */
 		protected $context = null;
 
 		/**
 		 * Contexto desta visão do tipo singular
-		 * 
-		 * @var  string 
+		 *
+		 * @var  string
 		 */
 		protected $context_singular = null;
 
 		/**
 		 * Contexto desta visão do tipo plural
-		 * 
-		 * @var  string 
+		 *
+		 * @var  string
 		 */
 		protected $context_plural = null;
 
@@ -45,7 +45,7 @@ class HelloWorldViewListFacade extends JViewLegacy {
 		 * Constructor.
 		 *
 		 * @param   array  $config  An optional associative array of configuration settings.
-		 * 
+		 *
 		 * @since   11.1
 		 */
 		public function __construct($config = array())
@@ -65,7 +65,24 @@ class HelloWorldViewListFacade extends JViewLegacy {
 
 		/**
 		 * Setting the toolbar
-		 * 
+		 *
+		 * @return  void
+		 */
+		protected function addSidebar()
+		{
+				//JToolbarHelper::help('ALG_SYS_FILTERS');
+
+				JHtmlSidebar::setAction('index.php?option=com_helloworlds&view=' . $this->context);
+				JHtmlSidebar::addFilter(
+								JText::_('ALG_SYS_STATUS_SELECT'), 'filter_published', JHtml::_('select.options', JHtml::_('jgrid.publishedOptions'), 'value', 'text', $this->state->get('filter.published'), true)
+				);
+
+				JHtmlSidebar::render();
+		}
+
+		/**
+		 * Setting the toolbar
+		 *
 		 * @return  void
 		 */
 		protected function addToolBar()
